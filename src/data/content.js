@@ -1,12 +1,12 @@
 export const company = {
-  name: 'Merchant Minds',
+  name: 'Merchant Minds Inc',
   tagline: 'Simplifying Global Sourcing, Seamlessly',
   description:
     'Your trusted buying agent and sourcing partner, bridging global manufacturers with fast-growing brands and international retailers.',
-  email: 'pranav@merchantminds.com',
+  email: 'info@merchantminds.in',
   phone: '+91 98765 43210',
   address: 'New Delhi, India',
-  founded: '2020',
+  founded: '2024',
 };
 
 export const navLinks = [
@@ -18,10 +18,10 @@ export const navLinks = [
 ];
 
 export const heroStats = [
-  { value: '500+', label: 'Suppliers Network' },
-  { value: '30+', label: 'Countries Served' },
-  { value: '10K+', label: 'Orders Completed' },
-  { value: '98%', label: 'Client Satisfaction' },
+  { value: '200+', label: 'Suppliers Network' },
+  { value: '20+', label: 'Countries Served' },
+  // { value: '10K+', label: 'Orders Completed' },
+  { value: '24%', label: 'Client Satisfaction' },
 ];
 
 export const services = [

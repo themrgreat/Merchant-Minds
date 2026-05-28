@@ -18,7 +18,7 @@ const contactInfo = [
   { icon: '📍', label: 'Address', value: company.address },
   { icon: '📞', label: 'Phone', value: company.phone, href: `tel:${company.phone}` },
   { icon: '✉️', label: 'Email', value: company.email, href: `mailto:${company.email}` },
-  { icon: '🕐', label: 'Business Hours', value: 'Mon–Sat, 9:00 AM – 6:30 PM IST' },
+  { icon: '🕐', label: 'Business Hours', value: 'Mon–Fri, 9:00 AM – 6:30 PM IST' },
 ];
 
 export default function Contact() {
@@ -381,7 +381,7 @@ export default function Contact() {
               <div className="text-center">
                 <div className="text-6xl mb-4">🗺️</div>
                 <p className="text-blue-900 font-bold text-xl">New Delhi, India</p>
-                <p className="text-blue-600 text-sm mt-2">International Buying Agency · Serving 30+ Countries</p>
+                <p className="text-blue-600 text-sm mt-2">International Buying Agency · Serving 20+ Countries</p>
                 <motion.a
                   whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}
                   href="https://maps.google.com/?q=New+Delhi,India"

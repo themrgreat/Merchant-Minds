@@ -33,7 +33,7 @@ export default function Navbar() {
             alt={company.name}
             whileHover={{ scale: 1.06 }}
             whileTap={{ scale: 0.95 }}
-            className={`h-10 w-auto object-contain transition-all duration-300 ${scrolled ? '' : 'brightness-0 invert'}`}
+            className={`h-8 w-auto object-contain transition-all duration-300 ${scrolled ? '' : 'brightness-0 invert'}`}
           />
         </Link>
 

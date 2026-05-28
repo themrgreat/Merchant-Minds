@@ -22,10 +22,10 @@ const values = [
 ];
 
 const stats = [
-  { label: 'Founded', value: '2020' },
-  { label: 'Countries', value: '30+' },
-  { label: 'Suppliers', value: '500+' },
-  { label: 'Orders', value: '10K+' },
+  { label: 'Founded', value: '2024' },
+  { label: 'Countries', value: '20+' },
+  { label: 'Suppliers', value: '200+' },
+  // { label: 'Orders', value: '10K+' },
 ];
 
 export default function About() {
@@ -141,7 +141,7 @@ export default function About() {
                   transition={{ delay: 0.5, type: 'spring', stiffness: 200 }}
                   className="absolute -top-6 -right-5 bg-linear-to-br from-amber-500 to-orange-500 text-white rounded-2xl p-5 shadow-2xl"
                 >
-                  <div className="text-4xl font-black">5+</div>
+                  <div className="text-4xl font-black">2+</div>
                   <div className="text-sm font-semibold text-amber-100">Years of<br />Excellence</div>
                 </motion.div>
               </div>
@@ -276,7 +276,7 @@ export default function About() {
       </section>
 
       {/* ── Timeline ── */}
-      <section className="py-28 bg-white">
+      {/* <section className="py-28 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeUp>
             <SectionHeading tag="Our Journey" title="From Startup to Global Partner" />
@@ -312,7 +312,7 @@ export default function About() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* ── CTA ── */}
       <section className="py-24 relative overflow-hidden">
@@ -328,10 +328,11 @@ export default function About() {
           className="relative max-w-4xl mx-auto px-4 text-center"
         >
           <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-5 leading-tight">
-            Let's Work Together
+            Let's Build Together
           </h2>
           <p className="text-blue-200/80 text-xl mb-10">
-            Join 500+ international brands that trust Merchant Minds for their sourcing needs.
+            {/* Join 200+ international brands that trust Merchant Minds for their sourcing needs. */}
+            Strategic Sourcing & Product Development Partner From India.
           </p>
           <motion.div whileHover={{ scale: 1.05, y: -3 }} whileTap={{ scale: 0.97 }}>
             <Link

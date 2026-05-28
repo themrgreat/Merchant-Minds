@@ -45,7 +45,7 @@ export default function Footer() {
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-6 max-w-sm">
               Your trusted international buying agent. We bridge global manufacturers with fast-growing brands
-              and retailers across 30+ countries.
+              and retailers across 20+ countries.
             </p>
             <div className="flex gap-3">
               {socialLinks.map((s) => (
