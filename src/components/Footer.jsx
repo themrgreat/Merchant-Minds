@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { company, footerLinks } from '../data/content';
+import { company, navLinks } from '../data/content';
 import logo from '../assets/image.png';
 
 const socialLinks = [
@@ -65,7 +65,7 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Quick Links</h4>
             <ul className="space-y-2">
-              {footerLinks.map((link) => (
+              {navLinks.map((link) => (
                 <li key={link.path}>
                   <Link
                     to={link.path}

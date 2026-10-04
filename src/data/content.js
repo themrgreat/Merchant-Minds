@@ -15,12 +15,8 @@ export const navLinks = [
   { label: 'Services', path: '/services' },
   { label: 'How We Work', path: '/#how-we-work' },
   { label: 'About', path: '/about' },
-  { label: 'Contact', path: '/contact' },
-];
-
-export const footerLinks = [
-  ...navLinks,
   { label: 'For Sourcing Agencies', path: '/sourcing-agencies' },
+  { label: 'Contact', path: '/contact' },
 ];
 
 export const heroStats = [

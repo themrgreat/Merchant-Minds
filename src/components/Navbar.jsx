@@ -45,7 +45,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex items-center gap-1">
+        <div className="hidden lg:flex items-center gap-1">
           {navLinks.map((link) => {
             const isActive = isLinkActive(link.path);
             return (
@@ -75,7 +75,7 @@ export default function Navbar() {
         {/* Mobile Toggle */}
         <motion.button
           whileTap={{ scale: 0.9 }}
-          className={`md:hidden p-2 rounded-lg transition-colors text-slate-700 hover:bg-slate-100`}
+          className={`lg:hidden p-2 rounded-lg transition-colors text-slate-700 hover:bg-slate-100`}
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
@@ -104,7 +104,7 @@ export default function Navbar() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="md:hidden overflow-hidden bg-white/98 backdrop-blur-xl border-t border-slate-100 shadow-2xl"
+            className="lg:hidden overflow-hidden bg-white/98 backdrop-blur-xl border-t border-slate-100 shadow-2xl"
           >
             <div className="px-4 py-4 flex flex-col gap-1">
               {navLinks.map((link, i) => (
