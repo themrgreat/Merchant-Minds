@@ -15,7 +15,7 @@ const allItems = [
   { name: 'Solid Oak Bookshelf', category: 'Furniture', moq: '50 units', lead: '45 days', image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=500&q=80' },
   { name: 'Ceramic Vase Collection', category: 'Home Décor', moq: '100 units', lead: '30 days', image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=500&q=80' },
   { name: 'Reed Diffuser Set', category: 'Home Décor', moq: '200 units', lead: '21 days', image: 'https://images.unsplash.com/photo-1602928298849-325cec8771c0?w=500&q=80' },
-  { name: 'Linen Throw Blanket', category: 'Textiles', moq: '150 units', lead: '28 days', image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&q=80' },
+  { name: 'Linen Throw Blanket', category: 'Textiles', moq: '150 units', lead: '28 days', image: 'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=500&q=80' },
   { name: 'Rattan Accent Chair', category: 'Furniture', moq: '30 units', lead: '60 days', image: 'https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?w=500&q=80' },
   { name: 'Soy Wax Candle Gift Set', category: 'Gifting & Lifestyle', moq: '300 units', lead: '14 days', image: 'https://images.unsplash.com/photo-1602928298849-325cec8771c0?w=500&q=80' },
 ];
@@ -32,20 +32,20 @@ export default function Products() {
     <main className="overflow-x-hidden">
 
       {/* ── Header ── */}
-      <section className="relative pt-36 pb-24 overflow-hidden" style={{ background: 'linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #0f172a 100%)' }}>
+      <section className="relative pt-36 pb-24 overflow-hidden surface-soft">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-1/4 right-1/3 w-80 h-80 bg-blue-500/20 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 left-1/4 w-64 h-64 bg-indigo-500/15 rounded-full blur-3xl" />
+          <div className="absolute top-1/4 right-1/3 w-80 h-80 bg-slate-200/60 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-1/4 w-64 h-64 bg-slate-100 rounded-full blur-3xl" />
         </div>
         <div className="absolute inset-0 opacity-5 pointer-events-none"
-          style={{ backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)', backgroundSize: '40px 40px' }}
+          style={{ backgroundImage: 'radial-gradient(circle, #94a3b8 1px, transparent 1px)', backgroundSize: '40px 40px' }}
         />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.span
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-block px-4 py-1.5 bg-white/10 text-white/70 text-xs font-bold uppercase tracking-widest rounded-full mb-6 border border-white/15"
+            className="inline-block px-4 py-1.5 bg-white text-slate-500 text-xs font-bold uppercase tracking-widest rounded-full mb-6 border border-slate-200"
           >
             Our Catalogue
           </motion.span>
@@ -53,16 +53,16 @@ export default function Products() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-            className="text-5xl md:text-6xl font-extrabold text-white mb-6 leading-tight"
+            className="text-5xl md:text-6xl font-extrabold text-slate-900 mb-6 leading-tight"
           >
             Products We{' '}
-            <span className="text-amber-400">Source & Export</span>
+            <span className="text-amber-600">Source & Export</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.35 }}
-            className="text-blue-200/75 text-xl max-w-2xl mx-auto"
+            className="text-slate-600 text-xl max-w-2xl mx-auto"
           >
             Home lifestyle products across six major categories, sourced from 200+
             verified manufacturers across Asia.
@@ -221,14 +221,13 @@ export default function Products() {
       </section>
 
       {/* ── Sourcing Process Steps ── */}
-      <section className="py-28 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #0f172a 100%)' }}>
+      <section className="py-28 relative overflow-hidden surface-soft">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeUp>
             <SectionHeading
               tag="Process"
               title="How We Source Your Products"
               subtitle="A streamlined 5-step process from inquiry to your warehouse door."
-              light
             />
           </FadeUp>
           <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-5 gap-5">
@@ -252,8 +251,8 @@ export default function Products() {
                   >
                     {s.step}
                   </motion.div>
-                  <h4 className="font-bold text-white mb-2 text-sm">{s.title}</h4>
-                  <p className="text-blue-200/65 text-xs leading-relaxed">{s.desc}</p>
+                  <h4 className="font-bold text-slate-900 mb-2 text-sm">{s.title}</h4>
+                  <p className="text-slate-600 text-xs leading-relaxed">{s.desc}</p>
                 </motion.div>
               </StaggerItem>
             ))}

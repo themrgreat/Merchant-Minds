@@ -35,15 +35,15 @@ export default function About() {
     <main className="overflow-x-hidden">
 
       {/* ── Page Header ── */}
-      <section className="relative pt-36 pb-24 overflow-hidden" style={{ background: 'linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #0f172a 100%)' }}>
+      <section className="relative pt-36 pb-24 overflow-hidden surface-soft">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-1/4 right-1/4 w-80 h-80 bg-blue-500/20 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 left-1/3 w-64 h-64 bg-indigo-500/15 rounded-full blur-3xl" />
+          <div className="absolute top-1/4 right-1/4 w-80 h-80 bg-slate-200/60 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-1/3 w-64 h-64 bg-slate-100 rounded-full blur-3xl" />
         </div>
         {[...Array(3)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute rounded-full border border-white/10 pointer-events-none"
+            className="absolute rounded-full border border-slate-300 pointer-events-none"
             style={{ width: 200 + i * 120, height: 200 + i * 120, right: '-5%', top: '10%' }}
             animate={{ rotate: 360 }}
             transition={{ duration: 18 + i * 6, repeat: Infinity, ease: 'linear' }}
@@ -54,7 +54,7 @@ export default function About() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-block px-4 py-1.5 bg-white/10 text-white/70 text-xs font-bold uppercase tracking-widest rounded-full mb-6 border border-white/15"
+            className="inline-block px-4 py-1.5 bg-white text-slate-500 text-xs font-bold uppercase tracking-widest rounded-full mb-6 border border-slate-200"
           >
             About Us
           </motion.span>
@@ -62,16 +62,16 @@ export default function About() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-            className="text-5xl md:text-6xl font-extrabold text-white mb-6 leading-tight"
+            className="text-5xl md:text-6xl font-extrabold text-slate-900 mb-6 leading-tight"
           >
             The Buying Agent That<br />
-            <span className="text-amber-400">Works Like Your Own Team</span>
+            <span className="text-amber-600">Works Like Your Own Team</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.35 }}
-            className="text-blue-200/75 text-xl max-w-2xl mx-auto"
+            className="text-slate-600 text-xl max-w-2xl mx-auto"
           >
             We act as your eyes and ears on the ground — managing the entire sourcing
             chain from supplier discovery to your warehouse door.
@@ -222,10 +222,10 @@ export default function About() {
       </section>
 
       {/* ── What Sets Us Apart ── */}
-      <section className="py-28 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #0f172a 100%)' }}>
+      <section className="py-28 relative overflow-hidden surface-soft">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/15 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 left-0 w-64 h-64 bg-indigo-500/10 rounded-full blur-3xl" />
+          <div className="absolute top-0 right-0 w-96 h-96 bg-slate-200/60 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-64 h-64 bg-slate-100 rounded-full blur-3xl" />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <FadeUp>
@@ -233,7 +233,6 @@ export default function About() {
               tag="Differentiators"
               title="What Sets Merchant Minds Apart?"
               subtitle="Technology-first approach to sourcing, quality, and sustainability."
-              light
             />
           </FadeUp>
           <StaggerContainer className="grid md:grid-cols-3 gap-8">
@@ -242,7 +241,7 @@ export default function About() {
                 <motion.div
                   whileHover={{ y: -8, backgroundColor: 'rgba(255,255,255,0.1)' }}
                   transition={{ type: 'spring', stiffness: 300 }}
-                  className="bg-white/6 border border-white/10 rounded-3xl p-9 group"
+                  className="bg-white border border-slate-100 shadow-sm rounded-3xl p-9 group"
                 >
                   <motion.div
                     whileHover={{ scale: 1.15, rotate: 5 }}
@@ -252,7 +251,7 @@ export default function About() {
                     {d.icon}
                   </motion.div>
                   <div className="w-8 h-0.5 bg-amber-400 mb-5 group-hover:w-16 transition-all duration-500 rounded" />
-                  <h3 className="text-xl font-bold text-white mb-5">{d.title}</h3>
+                  <h3 className="text-xl font-bold text-slate-900 mb-5">{d.title}</h3>
                   <ul className="space-y-3">
                     {d.points.map((p, j) => (
                       <motion.li
@@ -261,9 +260,9 @@ export default function About() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.3 + j * 0.1 }}
-                        className="flex items-start gap-3 text-blue-200/75 text-sm"
+                        className="flex items-start gap-3 text-slate-600 text-sm"
                       >
-                        <span className="text-amber-400 mt-0.5 shrink-0 font-bold">✓</span>
+                        <span className="text-amber-600 mt-0.5 shrink-0 font-bold">✓</span>
                         {p}
                       </motion.li>
                     ))}
@@ -315,11 +314,7 @@ export default function About() {
       </section> */}
 
       {/* ── CTA ── */}
-      <section className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-linear-to-r from-blue-950 to-blue-900" />
-        <div className="absolute inset-0 opacity-10 pointer-events-none"
-          style={{ backgroundImage: 'radial-gradient(circle at 30% 50%, white 1px, transparent 1px)', backgroundSize: '30px 30px' }}
-        />
+      <section className="py-24 bg-slate-50 relative overflow-hidden">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -327,10 +322,10 @@ export default function About() {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="relative max-w-4xl mx-auto px-4 text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-5 leading-tight">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-5 leading-tight">
             Let's Build Together
           </h2>
-          <p className="text-blue-200/80 text-xl mb-10">
+          <p className="text-slate-600 text-xl mb-10">
             {/* Join 200+ international brands that trust Merchant Minds for their sourcing needs. */}
             Strategic Sourcing & Product Development Partner From India.
           </p>

@@ -26,8 +26,6 @@ export const footerLinks = [
 export const heroStats = [
   { value: '200+', label: 'Suppliers Network' },
   { value: '20+', label: 'Countries Served' },
-  // { value: '10K+', label: 'Orders Completed' },
-  { value: '24%', label: 'Client Satisfaction' },
 ];
 
 export const services = [
@@ -146,7 +144,7 @@ export const productCategories = [
     name: 'Textiles',
     description:
       'Home textiles from certified ethical mills across South Asia.',
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=600&q=80',
     tags: ['Cushions', 'Throws', 'Rugs', 'Bed Linen', 'Table Linen', 'Upholstery'],
   },
   {

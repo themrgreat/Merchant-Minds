@@ -192,16 +192,16 @@ export default function Home() {
           }}
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-2 md:grid-cols-3">
+            <div className="grid grid-cols-2">
               {heroStats.map((stat, i) => (
                 <motion.div
                   key={stat.label}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 1 + i * 0.1 }}
-                  className="py-6 px-4 text-center border-r border-slate-200 last:border-r-0"
+                  className="py-4 md:py-6 px-2 md:px-4 text-center border-r border-slate-200 last:border-r-0"
                 >
-                  <div className="text-3xl font-extrabold text-amber-400">
+                  <div className="text-2xl md:text-3xl font-extrabold text-amber-500">
                     <AnimatedCounter target={stat.value} />+
                   </div>
                   <div className="text-slate-500 text-xs mt-1 font-medium tracking-wide uppercase">
@@ -497,16 +497,10 @@ export default function Home() {
       </section>
 
       {/* ─────────────── WHY CHOOSE US ─────────────── */}
-      <section
-        className="py-28 relative overflow-hidden"
-        style={{
-          background:
-            "linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #0f172a 100%)",
-        }}
-      >
+      <section className="py-28 relative overflow-hidden surface-soft">
         <div className="absolute inset-0 opacity-30 pointer-events-none">
-          <div className="absolute top-0 left-0 w-72 h-72 bg-blue-500 rounded-full blur-3xl opacity-20" />
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-indigo-500 rounded-full blur-3xl opacity-15" />
+          <div className="absolute top-0 left-0 w-72 h-72 bg-slate-300 rounded-full blur-3xl opacity-20" />
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-slate-200 rounded-full blur-3xl opacity-15" />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <FadeUp>
@@ -514,7 +508,6 @@ export default function Home() {
               tag="Why Us"
               title="What Makes Merchant Minds Different"
               subtitle="We don't just find factories — we deliver the right outcome for your business."
-              light
             />
           </FadeUp>
           <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -523,18 +516,17 @@ export default function Home() {
                 <motion.div
                   whileHover={{
                     y: -6,
-                    backgroundColor: "rgba(255,255,255,0.12)",
                   }}
                   transition={{ type: "spring", stiffness: 300 }}
-                  className="bg-white/6 border border-white/10 rounded-2xl p-7"
+                  className="border-t-2 border-slate-200 hover:border-amber-400 transition-colors duration-300 pt-6"
                 >
-                  <div className="w-9 h-9 bg-amber-500 rounded-xl flex items-center justify-center text-slate-900 font-black text-sm mb-5 shadow-lg">
+                  <div className="text-amber-600 font-bold text-sm tracking-widest mb-3">
                     {String(i + 1).padStart(2, "0")}
                   </div>
-                  <h3 className="font-bold text-white text-base mb-2">
+                  <h3 className="font-bold text-slate-900 text-base mb-2">
                     {item.title}
                   </h3>
-                  <p className="text-blue-200/70 text-sm leading-relaxed">
+                  <p className="text-slate-600 text-sm leading-relaxed">
                     {item.description}
                   </p>
                 </motion.div>
@@ -545,7 +537,7 @@ export default function Home() {
       </section>
 
       {/* ─────────────── CLIENT STORIES ─────────────── */}
-      <section className="py-28 bg-slate-50 overflow-hidden">
+      <section className="py-16 md:py-20 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeUp>
             <SectionHeading
@@ -557,8 +549,7 @@ export default function Home() {
       </section>
 
       {/* ─────────────── CTA BANNER ─────────────── */}
-      <section className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-linear-to-r from-amber-500 to-orange-500" />
+      <section className="py-24 bg-slate-50 relative overflow-hidden">
         <div
           className="absolute inset-0 opacity-10"
           style={{
@@ -574,10 +565,10 @@ export default function Home() {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="relative max-w-4xl mx-auto px-4 text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-5 leading-tight">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-5 leading-tight">
             Start a sourcing brief
           </h2>
-          <p className="text-white/85 text-xl mb-10">
+          <p className="text-slate-600 text-xl mb-10">
             Tell us what you need. We'll connect you with the right supplier
             within 48 hours.
           </p>
@@ -599,7 +590,7 @@ export default function Home() {
             >
               <a
                 href={`mailto:${company.email}`}
-                className="px-9 py-4 bg-white/20 hover:bg-white/30 text-white font-semibold rounded-2xl border border-white/30 transition-all duration-300"
+                className="px-9 py-4 bg-white hover:bg-slate-100 text-slate-700 font-semibold rounded-2xl border border-slate-300 transition-all duration-300"
               >
                 Email Us Directly
               </a>

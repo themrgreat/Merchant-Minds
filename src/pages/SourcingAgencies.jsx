@@ -12,17 +12,17 @@ export default function SourcingAgencies() {
     <main className="overflow-x-hidden">
 
       {/* ── Header ── */}
-      <section className="relative pt-36 pb-24 overflow-hidden" style={{ background: "linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #0f172a 100%)" }}>
+      <section className="relative pt-36 pb-24 overflow-hidden surface-soft">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-1/4 right-1/3 w-80 h-80 bg-blue-500/20 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 left-1/4 w-64 h-64 bg-indigo-500/15 rounded-full blur-3xl" />
+          <div className="absolute top-1/4 right-1/3 w-80 h-80 bg-slate-200/60 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-1/4 w-64 h-64 bg-slate-100 rounded-full blur-3xl" />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.span
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-block px-4 py-1.5 bg-white/10 text-white/70 text-xs font-bold uppercase tracking-widest rounded-full mb-6 border border-white/15"
+            className="inline-block px-4 py-1.5 bg-white text-slate-500 text-xs font-bold uppercase tracking-widest rounded-full mb-6 border border-slate-200"
           >
             For Sourcing Agencies
           </motion.span>
@@ -30,16 +30,16 @@ export default function SourcingAgencies() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-            className="text-5xl md:text-6xl font-extrabold text-white mb-6 leading-tight"
+            className="text-5xl md:text-6xl font-extrabold text-slate-900 mb-6 leading-tight"
           >
             For International{" "}
-            <span className="text-amber-400">Sourcing Agencies</span>
+            <span className="text-amber-600">Sourcing Agencies</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.35 }}
-            className="text-blue-200/75 text-xl max-w-2xl mx-auto"
+            className="text-slate-600 text-xl max-w-2xl mx-auto"
           >
             Need reliable execution in Asia without building your own team?
           </motion.p>
@@ -78,7 +78,7 @@ export default function SourcingAgencies() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="py-24 bg-slate-50">
+      <section className="py-16 bg-slate-50">
         <div className="max-w-3xl mx-auto px-4 text-center">
           <FadeUp>
             <motion.div whileHover={{ scale: 1.04, y: -3 }} whileTap={{ scale: 0.97 }}>

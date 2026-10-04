@@ -27,21 +27,21 @@ export default function Services() {
     <main className="overflow-x-hidden">
 
       {/* ── Header ── */}
-      <section className="relative pt-36 pb-24 overflow-hidden" style={{ background: 'linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #0f172a 100%)' }}>
+      <section className="relative pt-36 pb-24 overflow-hidden surface-soft">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-blue-500/20 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 left-1/4 w-64 h-64 bg-indigo-500/15 rounded-full blur-3xl" />
+          <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-slate-200/60 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-1/4 w-64 h-64 bg-slate-100 rounded-full blur-3xl" />
         </div>
         {/* Animated grid dots */}
         <div className="absolute inset-0 opacity-5 pointer-events-none"
-          style={{ backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)', backgroundSize: '40px 40px' }}
+          style={{ backgroundImage: 'radial-gradient(circle, #94a3b8 1px, transparent 1px)', backgroundSize: '40px 40px' }}
         />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.span
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-block px-4 py-1.5 bg-white/10 text-white/70 text-xs font-bold uppercase tracking-widest rounded-full mb-6 border border-white/15"
+            className="inline-block px-4 py-1.5 bg-white text-slate-500 text-xs font-bold uppercase tracking-widest rounded-full mb-6 border border-slate-200"
           >
             Our Services
           </motion.span>
@@ -49,16 +49,16 @@ export default function Services() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-            className="text-5xl md:text-6xl font-extrabold text-white mb-6 leading-tight"
+            className="text-5xl md:text-6xl font-extrabold text-slate-900 mb-6 leading-tight"
           >
             Everything Your Sourcing<br />
-            <span className="text-amber-400">Operation Needs</span>
+            <span className="text-amber-600">Operation Needs</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.35 }}
-            className="text-blue-200/75 text-xl max-w-2xl mx-auto"
+            className="text-slate-600 text-xl max-w-2xl mx-auto"
           >
             From supplier discovery to your warehouse — we handle the entire sourcing chain
             so you can focus on growing your brand.
@@ -158,10 +158,10 @@ export default function Services() {
       </section>
 
       {/* ── Tech Differentiators ── */}
-      <section className="py-28 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #0f172a 100%)' }}>
+      <section className="py-28 relative overflow-hidden surface-soft">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/15 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 left-0 w-64 h-64 bg-indigo-400/10 rounded-full blur-3xl" />
+          <div className="absolute top-0 right-0 w-96 h-96 bg-slate-200/60 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-64 h-64 bg-slate-100 rounded-full blur-3xl" />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <FadeUp>
@@ -169,7 +169,6 @@ export default function Services() {
               tag="Technology Edge"
               title="Tech-Powered Sourcing"
               subtitle="We leverage cutting-edge tools to deliver smarter, faster, more transparent sourcing."
-              light
             />
           </FadeUp>
           <StaggerContainer className="grid md:grid-cols-3 gap-8">
@@ -178,7 +177,7 @@ export default function Services() {
                 <motion.div
                   whileHover={{ y: -8, backgroundColor: 'rgba(255,255,255,0.1)' }}
                   transition={{ type: 'spring', stiffness: 300 }}
-                  className="bg-white/6 border border-white/10 rounded-3xl p-9 group"
+                  className="bg-white border border-slate-100 shadow-sm rounded-3xl p-9 group"
                 >
                   <motion.div
                     whileHover={{ scale: 1.15, rotate: 5 }}
@@ -188,7 +187,7 @@ export default function Services() {
                     {d.icon}
                   </motion.div>
                   <div className="w-8 h-0.5 bg-amber-400 mb-5 group-hover:w-16 transition-all duration-500 rounded" />
-                  <h3 className="text-xl font-bold text-white mb-4">{d.title}</h3>
+                  <h3 className="text-xl font-bold text-slate-900 mb-4">{d.title}</h3>
                   <ul className="space-y-3">
                     {d.points.map((point, j) => (
                       <motion.li
@@ -197,9 +196,9 @@ export default function Services() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.3 + j * 0.1 }}
-                        className="flex items-start gap-3 text-blue-200/75 text-sm"
+                        className="flex items-start gap-3 text-slate-600 text-sm"
                       >
-                        <span className="text-amber-400 mt-0.5 shrink-0 font-bold">✓</span>
+                        <span className="text-amber-600 mt-0.5 shrink-0 font-bold">✓</span>
                         {point}
                       </motion.li>
                     ))}
@@ -244,11 +243,7 @@ export default function Services() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-linear-to-r from-amber-500 to-orange-500" />
-        <div className="absolute inset-0 opacity-10 pointer-events-none"
-          style={{ backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)', backgroundSize: '32px 32px' }}
-        />
+      <section className="py-24 bg-slate-50 relative overflow-hidden">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -256,10 +251,10 @@ export default function Services() {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="relative max-w-4xl mx-auto px-4 text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-5 leading-tight">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-5 leading-tight">
             Transparent, Commission-Based Pricing
           </h2>
-          <p className="text-white/85 text-xl mb-10">
+          <p className="text-slate-600 text-xl mb-10">
             No hidden fees. Get a customised quote based on your product volume and complexity.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
@@ -274,7 +269,7 @@ export default function Services() {
             <motion.div whileHover={{ scale: 1.05, y: -3 }} whileTap={{ scale: 0.97 }}>
               <Link
                 to="/about"
-                className="px-9 py-4 bg-white/20 hover:bg-white/30 text-white font-semibold rounded-2xl border border-white/30 transition-all duration-300"
+                className="px-9 py-4 bg-white hover:bg-slate-100 text-slate-700 font-semibold rounded-2xl border border-slate-300 transition-all duration-300"
               >
                 Learn About Us
               </Link>

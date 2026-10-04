@@ -48,6 +48,10 @@
       linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #f1f5f9 100%);
   }
 
+  .surface-soft {
+    background: linear-gradient(135deg, #f8fafc 0%, #ffffff 50%, #f1f5f9 100%);
+  }
+
   .shimmer {
     background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
     background-size: 200% 100%;

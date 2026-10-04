@@ -9,9 +9,6 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const { pathname, hash } = useLocation();
 
-  // Home hero is light, so the navbar uses dark text there too
-  const isOnLight = scrolled || pathname === '/';
-
   const isLinkActive = (path) => {
     if (path === '/') return pathname === '/' && !hash;
     if (path.includes('#')) return pathname + hash === path;
@@ -43,7 +40,7 @@ export default function Navbar() {
             alt={company.name}
             whileHover={{ scale: 1.06 }}
             whileTap={{ scale: 0.95 }}
-            className={`h-8 w-auto object-contain transition-all duration-300 ${isOnLight ? '' : 'brightness-0 invert'}`}
+            className="h-8 w-auto object-contain transition-all duration-300"
           />
         </Link>
 
@@ -57,10 +54,8 @@ export default function Navbar() {
                 to={link.path}
                 className={`relative px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                   isActive
-                    ? isOnLight ? 'text-slate-900' : 'text-white'
-                    : isOnLight
-                    ? 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
-                    : 'text-white/80 hover:text-white hover:bg-white/10'
+                    ? 'text-slate-900'
+                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
                 }`}
               >
                 {link.label}
@@ -68,7 +63,7 @@ export default function Navbar() {
                   <motion.div
                     layoutId="nav-pill"
                     className="absolute inset-0 rounded-lg -z-10"
-                    style={{ background: isOnLight ? 'rgb(241 245 249)' : 'rgba(255,255,255,0.12)' }}
+                    style={{ background: 'rgb(241 245 249)' }}
                     transition={{ type: 'spring', bounce: 0.25, duration: 0.4 }}
                   />
                 )}
@@ -80,7 +75,7 @@ export default function Navbar() {
         {/* Mobile Toggle */}
         <motion.button
           whileTap={{ scale: 0.9 }}
-          className={`md:hidden p-2 rounded-lg transition-colors ${isOnLight ? 'text-slate-700 hover:bg-slate-100' : 'text-white hover:bg-white/10'}`}
+          className={`md:hidden p-2 rounded-lg transition-colors text-slate-700 hover:bg-slate-100`}
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
