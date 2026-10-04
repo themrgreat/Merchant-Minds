@@ -312,8 +312,10 @@ export default function Contact() {
                         <option value="">Select category (optional)</option>
                         <option value="Furniture">Furniture</option>
                         <option value="Home Décor">Home Décor</option>
-                        <option value="Aromatics">Aromatics</option>
+                        <option value="Tabletop & Kitchen">Tabletop & Kitchen</option>
+                        <option value="Lighting">Lighting</option>
                         <option value="Textiles">Textiles</option>
+                        <option value="Gifting & Lifestyle">Gifting & Lifestyle</option>
                         <option value="Other">Other / Multiple</option>
                       </select>
                     </div>

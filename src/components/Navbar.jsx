@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { company, navLinks } from '../data/content';
 import logo from '../assets/image.png';
@@ -7,6 +7,16 @@ import logo from '../assets/image.png';
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const { pathname, hash } = useLocation();
+
+  // Home hero is light, so the navbar uses dark text there too
+  const isOnLight = scrolled || pathname === '/';
+
+  const isLinkActive = (path) => {
+    if (path === '/') return pathname === '/' && !hash;
+    if (path.includes('#')) return pathname + hash === path;
+    return pathname === path;
+  };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 30);
@@ -33,55 +43,44 @@ export default function Navbar() {
             alt={company.name}
             whileHover={{ scale: 1.06 }}
             whileTap={{ scale: 0.95 }}
-            className={`h-8 w-auto object-contain transition-all duration-300 ${scrolled ? '' : 'brightness-0 invert'}`}
+            className={`h-8 w-auto object-contain transition-all duration-300 ${isOnLight ? '' : 'brightness-0 invert'}`}
           />
         </Link>
 
         {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-1">
-          {navLinks.map((link) => (
-            <NavLink
-              key={link.path}
-              to={link.path}
-              className={({ isActive }) =>
-                `relative px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+          {navLinks.map((link) => {
+            const isActive = isLinkActive(link.path);
+            return (
+              <Link
+                key={link.path}
+                to={link.path}
+                className={`relative px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                   isActive
-                    ? scrolled ? 'text-blue-700 bg-blue-50' : 'text-white bg-white/15'
-                    : scrolled
-                    ? 'text-slate-600 hover:text-blue-800 hover:bg-slate-50'
+                    ? isOnLight ? 'text-slate-900' : 'text-white'
+                    : isOnLight
+                    ? 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
                     : 'text-white/80 hover:text-white hover:bg-white/10'
-                }`
-              }
-            >
-              {({ isActive }) => (
-                <>
-                  {link.label}
-                  {isActive && (
-                    <motion.div
-                      layoutId="nav-pill"
-                      className="absolute inset-0 rounded-lg -z-10"
-                      style={{ background: scrolled ? 'rgb(239 246 255)' : 'rgba(255,255,255,0.12)' }}
-                      transition={{ type: 'spring', bounce: 0.25, duration: 0.4 }}
-                    />
-                  )}
-                </>
-              )}
-            </NavLink>
-          ))}
-          <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }} className="ml-3">
-            <Link
-              to="/contact"
-              className="px-5 py-2.5 bg-linear-to-r from-amber-500 to-amber-400 hover:from-amber-400 hover:to-amber-300 text-white text-sm font-bold rounded-xl transition-all duration-300 shadow-md hover:shadow-amber-400/40 hover:shadow-lg"
-            >
-              Get a Quote
-            </Link>
-          </motion.div>
+                }`}
+              >
+                {link.label}
+                {isActive && (
+                  <motion.div
+                    layoutId="nav-pill"
+                    className="absolute inset-0 rounded-lg -z-10"
+                    style={{ background: isOnLight ? 'rgb(241 245 249)' : 'rgba(255,255,255,0.12)' }}
+                    transition={{ type: 'spring', bounce: 0.25, duration: 0.4 }}
+                  />
+                )}
+              </Link>
+            );
+          })}
         </div>
 
         {/* Mobile Toggle */}
         <motion.button
           whileTap={{ scale: 0.9 }}
-          className={`md:hidden p-2 rounded-lg transition-colors ${scrolled ? 'text-slate-700 hover:bg-slate-100' : 'text-white hover:bg-white/10'}`}
+          className={`md:hidden p-2 rounded-lg transition-colors ${isOnLight ? 'text-slate-700 hover:bg-slate-100' : 'text-white hover:bg-white/10'}`}
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
@@ -120,32 +119,17 @@ export default function Navbar() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.06 }}
                 >
-                  <NavLink
+                  <Link
                     to={link.path}
                     onClick={() => setMenuOpen(false)}
-                    className={({ isActive }) =>
-                      `block px-4 py-3 rounded-xl text-sm font-medium transition-colors ${
-                        isActive ? 'bg-blue-50 text-blue-800 font-semibold' : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'
-                      }`
-                    }
+                    className={`block px-4 py-3 rounded-xl text-sm font-medium transition-colors ${
+                      isLinkActive(link.path) ? 'bg-slate-100 text-slate-900 font-semibold' : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'
+                    }`}
                   >
                     {link.label}
-                  </NavLink>
+                  </Link>
                 </motion.div>
               ))}
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: navLinks.length * 0.06 }}
-              >
-                <Link
-                  to="/contact"
-                  onClick={() => setMenuOpen(false)}
-                  className="block mt-2 px-4 py-3 bg-linear-to-r from-amber-500 to-amber-400 text-white text-sm font-bold rounded-xl text-center shadow-lg"
-                >
-                  Get a Quote
-                </Link>
-              </motion.div>
             </div>
           </motion.div>
         )}

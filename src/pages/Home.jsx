@@ -11,7 +11,8 @@ import {
   services,
   productCategories,
   whyUs,
-  testimonials,
+  processSteps,
+  categoryNote,
   company,
 } from "../data/content";
 import SectionHeading from "../components/SectionHeading";
@@ -45,7 +46,7 @@ export default function Home() {
         {floatingShapes.map((s, i) => (
           <motion.div
             key={i}
-            className="absolute rounded-full border border-white pointer-events-none"
+            className="absolute rounded-full border border-slate-300 pointer-events-none"
             style={{
               width: s.size,
               height: s.size,
@@ -64,8 +65,8 @@ export default function Home() {
         ))}
 
         {/* Glowing orb */}
-        <div className="absolute right-0 top-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute left-1/4 bottom-1/4 w-64 h-64 bg-indigo-500/15 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute right-0 top-1/4 w-96 h-96 bg-slate-200/50 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute left-1/4 bottom-1/4 w-64 h-64 bg-slate-100 rounded-full blur-3xl pointer-events-none" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-36 md:py-44">
           <div className="max-w-3xl">
@@ -74,7 +75,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2.5 glass rounded-full px-5 py-2.5 text-white/80 text-sm mb-10"
+              className="inline-flex items-center gap-2.5 bg-white border border-slate-200 shadow-sm rounded-full px-5 py-2.5 text-slate-600 text-sm mb-10"
             >
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75" />
@@ -89,7 +90,7 @@ export default function Home() {
                 initial={{ y: "100%", opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-                className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.07] tracking-tight"
+                className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-slate-900 leading-[1.07] tracking-tight"
               >
                 Simplifying
               </motion.h1>
@@ -117,7 +118,7 @@ export default function Home() {
                   delay: 0.2,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.07] tracking-tight"
+                className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-slate-900 leading-[1.07] tracking-tight"
               >
                 Seamlessly
               </motion.h1>
@@ -127,7 +128,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.5 }}
-              className="text-xl text-blue-200/80 leading-relaxed mb-10 max-w-2xl"
+              className="text-xl text-slate-600 leading-relaxed mb-10 max-w-2xl"
             >
               We bridge international brands with verified manufacturers across
               Asia. End-to-end sourcing, supplier negotiations, and export
@@ -170,7 +171,7 @@ export default function Home() {
               >
                 <Link
                   to="/services"
-                  className="inline-flex items-center gap-2 px-8 py-4 glass text-white font-semibold rounded-2xl hover:bg-white/15 transition-all duration-300 text-base"
+                  className="inline-flex items-center gap-2 px-8 py-4 bg-white border border-slate-200 text-slate-700 font-semibold rounded-2xl hover:bg-slate-50 shadow-sm transition-all duration-300 text-base"
                 >
                   Our Services
                 </Link>
@@ -184,9 +185,9 @@ export default function Home() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.9 }}
-          className="absolute bottom-0 left-0 right-0 border-t border-white/8"
+          className="absolute bottom-0 left-0 right-0 border-t border-slate-200"
           style={{
-            background: "rgba(15,23,42,0.5)",
+            background: "rgba(255,255,255,0.7)",
             backdropFilter: "blur(16px)",
           }}
         >
@@ -198,12 +199,12 @@ export default function Home() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 1 + i * 0.1 }}
-                  className="py-6 px-4 text-center border-r border-white/8 last:border-r-0"
+                  className="py-6 px-4 text-center border-r border-slate-200 last:border-r-0"
                 >
                   <div className="text-3xl font-extrabold text-amber-400">
                     <AnimatedCounter target={stat.value} />+
                   </div>
-                  <div className="text-white/50 text-xs mt-1 font-medium tracking-wide uppercase">
+                  <div className="text-slate-500 text-xs mt-1 font-medium tracking-wide uppercase">
                     {stat.label}
                   </div>
                 </motion.div>
@@ -211,6 +212,36 @@ export default function Home() {
             </div>
           </div>
         </motion.div>
+      </section>
+
+      {/* ─────────────── HOW WE WORK ─────────────── */}
+      <section id="how-we-work" className="py-28 bg-slate-50 scroll-mt-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeUp>
+            <SectionHeading tag="How We Work" title="From Product Idea to Shipment" />
+          </FadeUp>
+          <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {processSteps.map((s) => (
+              <StaggerItem key={s.step}>
+                <motion.div
+                  whileHover={{ y: -8, scale: 1.01 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                  className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-2xl border border-slate-100 card-glow transition-shadow duration-300 h-full group"
+                >
+                  <div className="w-12 h-12 bg-linear-to-br from-amber-400 to-amber-600 rounded-2xl flex items-center justify-center text-white font-black text-sm mb-5 shadow-lg shadow-amber-500/30">
+                    {s.step}
+                  </div>
+                  <h3 className="text-lg font-bold text-slate-900 mb-3 group-hover:text-blue-800 transition-colors">
+                    {s.title}
+                  </h3>
+                  <p className="text-slate-500 text-sm leading-relaxed">
+                    {s.description}
+                  </p>
+                </motion.div>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
+        </div>
       </section>
 
       {/* ─────────────── WHO WE ARE ─────────────── */}
@@ -444,6 +475,12 @@ export default function Home() {
                   </motion.div>
                 </SwiperSlide>
               ))}
+              <SwiperSlide>
+                <div className="h-full min-h-72 rounded-3xl border-2 border-dashed border-slate-200 bg-slate-50 p-8 flex flex-col justify-center text-center">
+                  <h3 className="text-xl font-bold text-slate-900 mb-3">{categoryNote.title}</h3>
+                  <p className="text-slate-500 text-sm leading-relaxed">{categoryNote.text}</p>
+                </div>
+              </SwiperSlide>
             </Swiper>
           </FadeIn>
           <FadeUp delay={0.3} className="text-center">
@@ -507,60 +544,15 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─────────────── TESTIMONIALS ─────────────── */}
+      {/* ─────────────── CLIENT STORIES ─────────────── */}
       <section className="py-28 bg-slate-50 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeUp>
             <SectionHeading
-              tag="Client Stories"
-              title="What Our International Clients Say"
+              tag="Our Network"
+              title="Currently building our international sourcing network"
             />
           </FadeUp>
-          <StaggerContainer className="grid md:grid-cols-3 gap-6">
-            {testimonials.map((t, i) => (
-              <StaggerItem key={i}>
-                <motion.div
-                  whileHover={{ y: -6 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                  className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl border border-slate-100 card-glow transition-shadow duration-300 h-full flex flex-col"
-                >
-                  {/* Stars */}
-                  <div className="flex gap-1 mb-5">
-                    {[...Array(5)].map((_, j) => (
-                      <motion.svg
-                        key={j}
-                        initial={{ opacity: 0, scale: 0 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.3 + j * 0.07 }}
-                        className="w-4 h-4 text-amber-400 fill-amber-400"
-                        viewBox="0 0 20 20"
-                      >
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </motion.svg>
-                    ))}
-                  </div>
-                  <p className="text-slate-600 text-sm leading-relaxed mb-6 italic flex-1">
-                    "{t.text}"
-                  </p>
-                  <div className="flex items-center gap-3 pt-4 border-t border-slate-100">
-                    <div className="w-11 h-11 bg-linear-to-br from-blue-600 to-blue-900 rounded-full flex items-center justify-center text-white font-bold text-sm shadow-md">
-                      {t.name[0]}
-                    </div>
-                    <div>
-                      <div className="font-bold text-slate-900 text-sm">
-                        {t.name}
-                      </div>
-                      <div className="text-slate-400 text-xs">
-                        {t.role} · {t.company}
-                      </div>
-                      <div className="text-xs mt-0.5">{t.country}</div>
-                    </div>
-                  </div>
-                </motion.div>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
         </div>
       </section>
 
@@ -583,7 +575,7 @@ export default function Home() {
           className="relative max-w-4xl mx-auto px-4 text-center"
         >
           <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-5 leading-tight">
-            Ready to Source Smarter?
+            Start a sourcing brief
           </h2>
           <p className="text-white/85 text-xl mb-10">
             Tell us what you need. We'll connect you with the right supplier

@@ -6,7 +6,7 @@ import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import { productCategories } from '../data/content';
+import { productCategories, categoryNote } from '../data/content';
 import SectionHeading from '../components/SectionHeading';
 import { FadeUp, FadeIn, StaggerContainer, StaggerItem } from '../components/AnimateOnScroll';
 import useScrollTop from '../hooks/useScrollTop';
@@ -14,13 +14,13 @@ import useScrollTop from '../hooks/useScrollTop';
 const allItems = [
   { name: 'Solid Oak Bookshelf', category: 'Furniture', moq: '50 units', lead: '45 days', image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=500&q=80' },
   { name: 'Ceramic Vase Collection', category: 'Home Décor', moq: '100 units', lead: '30 days', image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=500&q=80' },
-  { name: 'Reed Diffuser Set', category: 'Aromatics', moq: '200 units', lead: '21 days', image: 'https://images.unsplash.com/photo-1602928298849-325cec8771c0?w=500&q=80' },
+  { name: 'Reed Diffuser Set', category: 'Home Décor', moq: '200 units', lead: '21 days', image: 'https://images.unsplash.com/photo-1602928298849-325cec8771c0?w=500&q=80' },
   { name: 'Linen Throw Blanket', category: 'Textiles', moq: '150 units', lead: '28 days', image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&q=80' },
   { name: 'Rattan Accent Chair', category: 'Furniture', moq: '30 units', lead: '60 days', image: 'https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?w=500&q=80' },
-  { name: 'Soy Wax Candle Gift Set', category: 'Aromatics', moq: '300 units', lead: '14 days', image: 'https://images.unsplash.com/photo-1602928298849-325cec8771c0?w=500&q=80' },
+  { name: 'Soy Wax Candle Gift Set', category: 'Gifting & Lifestyle', moq: '300 units', lead: '14 days', image: 'https://images.unsplash.com/photo-1602928298849-325cec8771c0?w=500&q=80' },
 ];
 
-const filters = ['All', ...productCategories.map((c) => c.name)];
+const filters = ['All', ...new Set(allItems.map((i) => i.category))];
 
 export default function Products() {
   useScrollTop();
@@ -64,7 +64,7 @@ export default function Products() {
             transition={{ duration: 0.7, delay: 0.35 }}
             className="text-blue-200/75 text-xl max-w-2xl mx-auto"
           >
-            Home lifestyle products across four major categories, sourced from 500+
+            Home lifestyle products across six major categories, sourced from 200+
             verified manufacturers across Asia.
           </motion.p>
         </div>
@@ -120,6 +120,12 @@ export default function Products() {
                   </motion.div>
                 </SwiperSlide>
               ))}
+              <SwiperSlide>
+                <div className="h-full min-h-72 rounded-3xl border-2 border-dashed border-slate-200 bg-slate-50 p-8 flex flex-col justify-center text-center">
+                  <h3 className="text-2xl font-bold text-slate-900 mb-3">{categoryNote.title}</h3>
+                  <p className="text-slate-500 text-sm leading-relaxed">{categoryNote.text}</p>
+                </div>
+              </SwiperSlide>
             </Swiper>
           </FadeIn>
         </div>

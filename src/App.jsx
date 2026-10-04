@@ -8,6 +8,7 @@ import About from './pages/About';
 import Products from './pages/Products';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
+import SourcingAgencies from './pages/SourcingAgencies';
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
         <Route path="/about" element={<About />} />
         <Route path="/products" element={<Products />} />
         <Route path="/services" element={<Services />} />
+        <Route path="/sourcing-agencies" element={<SourcingAgencies />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />
