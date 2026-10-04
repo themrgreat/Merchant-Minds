@@ -85,7 +85,7 @@ export default function Home() {
             </motion.div>
 
             {/* Headline */}
-            <div className="overflow-hidden mb-3">
+            <div className = "overflow-hidden mb-3">
               <motion.h1
                 initial={{ y: "100%", opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}

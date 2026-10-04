@@ -12,12 +12,24 @@ import { FadeUp, FadeIn, StaggerContainer, StaggerItem } from '../components/Ani
 import useScrollTop from '../hooks/useScrollTop';
 
 const allItems = [
-  { name: 'Solid Oak Bookshelf', category: 'Furniture', moq: '50 units', lead: '45 days', image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=500&q=80' },
-  { name: 'Ceramic Vase Collection', category: 'Home Décor', moq: '100 units', lead: '30 days', image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=500&q=80' },
-  { name: 'Reed Diffuser Set', category: 'Home Décor', moq: '200 units', lead: '21 days', image: 'https://images.unsplash.com/photo-1602928298849-325cec8771c0?w=500&q=80' },
-  { name: 'Linen Throw Blanket', category: 'Textiles', moq: '150 units', lead: '28 days', image: 'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=500&q=80' },
-  { name: 'Rattan Accent Chair', category: 'Furniture', moq: '30 units', lead: '60 days', image: 'https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?w=500&q=80' },
-  { name: 'Soy Wax Candle Gift Set', category: 'Gifting & Lifestyle', moq: '300 units', lead: '14 days', image: 'https://images.unsplash.com/photo-1602928298849-325cec8771c0?w=500&q=80' },
+  { name: 'Solid Wood Bookshelf', category: 'Furniture', moq: '50 units', lead: '45 days', image: 'https://images.unsplash.com/photo-1593430980369-68efc5a5eb34?w=500&q=80' },
+  { name: 'Wicker Accent Chair', category: 'Furniture', moq: '30 units', lead: '60 days', image: 'https://images.unsplash.com/photo-1634212926265-f84991da274d?w=500&q=80' },
+  { name: 'Wooden Sideboard Cabinet', category: 'Furniture', moq: '40 units', lead: '55 days', image: 'https://images.unsplash.com/photo-1523920020520-bc3e5db128b5?w=500&q=80' },
+  { name: 'Ceramic Vase Collection', category: 'Home Décor', moq: '100 units', lead: '30 days', image: 'https://images.unsplash.com/photo-1687818801145-ec9fd5319a79?w=500&q=80' },
+  { name: 'Reed Diffuser Set', category: 'Home Décor', moq: '200 units', lead: '21 days', image: 'https://images.unsplash.com/photo-1750429431308-96eb0e8b6f6f?w=500&q=80' },
+  { name: 'Brass Candelabra', category: 'Home Décor', moq: '150 units', lead: '28 days', image: 'https://images.unsplash.com/photo-1511896224909-4207adfd55c6?w=500&q=80' },
+  { name: 'Stainless Steel Bowl Set', category: 'Tabletop & Kitchen', moq: '200 units', lead: '35 days', image: 'https://images.unsplash.com/photo-1529517986296-847580704921?w=500&q=80' },
+  { name: 'Wooden Serving Tray', category: 'Tabletop & Kitchen', moq: '250 units', lead: '30 days', image: 'https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7?w=500&q=80' },
+  { name: 'Brass Barware Set', category: 'Tabletop & Kitchen', moq: '120 units', lead: '40 days', image: 'https://images.unsplash.com/photo-1531002423613-b7d0e005770b?w=500&q=80' },
+  { name: 'Brass Table Lamp', category: 'Lighting', moq: '80 units', lead: '40 days', image: 'https://images.unsplash.com/photo-1612735849751-38ba2c6f4458?w=500&q=80' },
+  { name: 'Wire Cage Pendant Light', category: 'Lighting', moq: '60 units', lead: '45 days', image: 'https://images.unsplash.com/photo-1556545094-25635bdb8c1c?w=500&q=80' },
+  { name: 'Black Iron Lantern', category: 'Lighting', moq: '100 units', lead: '35 days', image: 'https://images.unsplash.com/photo-1524675784525-96b2219b588a?w=500&q=80' },
+  { name: 'Fringed Cotton Throw', category: 'Textiles', moq: '150 units', lead: '28 days', image: 'https://images.unsplash.com/photo-1531877025030-f7696a50770f?w=500&q=80' },
+  { name: 'Linen Cushion Set', category: 'Textiles', moq: '300 units', lead: '25 days', image: 'https://images.unsplash.com/photo-1603192399946-8bbb0703cfc4?w=500&q=80' },
+  { name: 'Bed Linen Set', category: 'Textiles', moq: '100 units', lead: '35 days', image: 'https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=500&q=80' },
+  { name: 'Candle & Fragrance Gift Set', category: 'Gifting & Lifestyle', moq: '300 units', lead: '14 days', image: 'https://images.unsplash.com/photo-1665124197613-ffbb755f4ac2?w=500&q=80' },
+  { name: 'Ribbon Gift Box Set', category: 'Gifting & Lifestyle', moq: '200 units', lead: '21 days', image: 'https://images.unsplash.com/photo-1641933002513-880c86d110e5?w=500&q=80' },
+  { name: 'Festive Ornament Set', category: 'Gifting & Lifestyle', moq: '250 units', lead: '30 days', image: 'https://images.unsplash.com/photo-1640410680927-e600c3b35707?w=500&q=80' },
 ];
 
 const filters = ['All', ...new Set(allItems.map((i) => i.category))];
