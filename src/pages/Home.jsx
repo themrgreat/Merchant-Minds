@@ -85,7 +85,7 @@ export default function Home() {
             </motion.div>
 
             {/* Headline */}
-            <div className = "overflow-hidden mb-3">
+            <div className="overflow-hidden mb-3">
               <motion.h1
                 initial={{ y: "100%", opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
@@ -218,7 +218,10 @@ export default function Home() {
       <section id="how-we-work" className="py-28 bg-slate-50 scroll-mt-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeUp>
-            <SectionHeading tag="How We Work" title="From Product Idea to Shipment" />
+            <SectionHeading
+              tag="How We Work"
+              title="From Product Idea to Shipment"
+            />
           </FadeUp>
           <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {processSteps.map((s) => (
@@ -477,8 +480,12 @@ export default function Home() {
               ))}
               <SwiperSlide>
                 <div className="h-full min-h-72 rounded-3xl border-2 border-dashed border-slate-200 bg-slate-50 p-8 flex flex-col justify-center text-center">
-                  <h3 className="text-xl font-bold text-slate-900 mb-3">{categoryNote.title}</h3>
-                  <p className="text-slate-500 text-sm leading-relaxed">{categoryNote.text}</p>
+                  <h3 className="text-xl font-bold text-slate-900 mb-3">
+                    {categoryNote.title}
+                  </h3>
+                  <p className="text-slate-500 text-sm leading-relaxed">
+                    {categoryNote.text}
+                  </p>
                 </div>
               </SwiperSlide>
             </Swiper>
